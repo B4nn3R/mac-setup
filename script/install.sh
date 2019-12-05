@@ -197,7 +197,6 @@ if $IS_HOMEBREW_INSTALLED; then
       read -p "${ARROW_YELLOW} Please enter Apple ID: " masemail
 
       mas signin --dialog ${masemail}
-      #mas signin mas@example.com 'ZdkM4f$gzF;gX3ABXNLf8KcCt.x.np'
     fi
   fi
 fi
