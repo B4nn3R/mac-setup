@@ -25,13 +25,97 @@ ARROW="$CYAN$BOLD==>$DEFAULT"
 ARROW_GREEN="$GREEN$BOLD==>$DEFAULT"
 ARROW_YELLOW="$YELLOW$BOLD==>$DEFAULT"
 # Array of available applications that can be installed via Homebrew Cask
-AVAILABLE_CASK_APPLICATIONS=(appcleaner background-music cyberduck drawio firefox flux fork google-chrome gpg-suite keepingyouawake keka mamp opera postman sequel-pro skype slack spectacle transmission tunnelblick visual-studio-code vlc)
+AVAILABLE_CASK_APPLICATIONS=(
+  appcleaner
+  agenda
+  alfred
+  android-file-transfer
+  android-studio
+  adafruit-arduino
+  avast-security
+  background-music
+  balenaetcher
+  cyberduck
+  docker
+  docker-toolbox
+  dropbox
+  filezilla
+  firefox
+  flux
+  fork
+  google-chrome
+  gpg-suite
+  iterm2
+  keepingyouawake
+  keka
+  libreoffice
+  libreoffice-language-pack
+  mamp
+  microsoft-office
+  onedrive
+  openoffice
+  opera
+  postman
+  sequel-pro
+  skyfonts
+  skype
+  slack
+  spectacle
+  spotify
+  teamviewer
+  the-unarchiver
+  transmission
+  tunnelblick
+  visual-studio
+  visual-studio-code
+  vlc
+  whatsapp
+)
+# Array of available App Store applications
+AVAILABLE_MAS_APPLICATIONS=(
+  1147396723  #WhatsApp Desktop
+)
 # Array of available npm packages
-AVAILABLE_NPM_PACKAGES=(gulp-cli jest live-server create-react-app)
+AVAILABLE_NPM_PACKAGES=(
+  gulp-cli
+  jest
+  live-server
+  create-react-app
+)
 # Array of available VS Code extensions
-AVAILABLE_VSCODE_EXTENSIONS=(CoenraadS.bracket-pair-colorizer PKief.material-icon-theme alefragnani.project-manager christian-kohler.path-intellisense dbaeumer.vscode-eslint formulahendry.auto-rename-tag mrmlnc.vscode-scss msjsdiag.debugger-for-chrome techer.open-in-browser aaron-bond.better-comments kamikillerto.vscode-colorize christian-kohler.npm-intellisense)
+AVAILABLE_VSCODE_EXTENSIONS=(
+  formulahendry.auto-rename-tag
+  CoenraadS.bracket-pair-colorizer
+  naumovs.color-highlight
+  pranaygp.vscode-css-peek
+  dsznajder.es7-react-js-snippets
+  dbaeumer.vscode-eslint
+  eamodio.gitlens
+  ecmel.vscode-html-css
+  oderwat.indent-rainbow
+  xabikos.javascriptsnippets
+  ritwickdey.live-sass
+  ritwickdey.liveserver
+  pkief.material-icon-theme
+  equinusocio.vsc-material-theme
+  esbenp.prettier-vscode
+  msjsdiag.vscode-react-native
+  humao.rest-client
+  shan.code-settings-sync
+  liximomo.sftp
+  chakrounanas.turbo-console-log
+  alefragnani.project-manager
+  christian-kohler.path-intellisense
+  mrmlnc.vscode-scss
+  msjsdiag.debugger-for-chrome
+  techer.open-in-browser
+  aaron-bond.better-comments
+  kamikillerto.vscode-colorize
+  christian-kohler.npm-intellisense
+)
 # Arrays of applications/packages/extensions selected by user (empty by default)
 SELECTED_CASK_APPLICATIONS=()
+SELECTED_MAS_APPLICATIONS=()
 SELECTED_NPM_PACKAGES=()
 SELECTED_VSCODE_EXTENTIONS=()
 # Booleans to track if specific programs are already installed
@@ -88,6 +172,36 @@ else
 fi
 
 #----------------------------
+# MAS
+#----------------------------
+if hash mas 2>/dev/null; then
+  IS_MAS_INSTALLED=true
+fi
+
+if $IS_HOMEBREW_INSTALLED; then
+  if $IS_MAS_INSTALLED; then
+    echo "${ARROW_GREEN} MAS already installed!"
+    echo "${ARROW} Updating app pending updates..."
+
+    mas upgrade
+  else
+    read -ep "${ARROW_YELLOW} Install MAS? [y/n]: "
+
+    if [ "$REPLY" == "y" ]; then
+      echo "${ARROW} Installing MAS..."
+      
+      brew install mas
+      
+      IS_MAS_INSTALLED=true
+
+      read -p "${ARROW_YELLOW} Please enter Apple ID: " masemail
+
+      mas signin --dialog ${masemail}
+    fi
+  fi
+fi
+
+#----------------------------
 # Git
 #----------------------------
 
@@ -127,6 +241,29 @@ read -p "${ARROW_YELLOW} Configure bash by creating ~/.bash_profile file? [y/n]:
 if [ "$REPLY" == "y" ]; then
   echo "${ARROW} Creating ~/.bash_profile file..."
   cp .bash_profile ~ 
+fi
+
+#----------------------------
+# App Store bundle
+#----------------------------
+if $IS_MAS_INSTALLED; then
+  read -p "${ARROW_YELLOW} Install applications via App Store? [y/n]: "
+
+  if [ "$REPLY" == "y" ]; then
+    for item in "${AVAILABLE_MAS_APPLICATIONS[@]}"; do
+      read -ep "${ARROW_YELLOW} Install \"$item\"? [y/n]: "
+      if [ "$REPLY" == "y" ]; then
+        SELECTED_MAS_APPLICATIONS+=("$item")
+      fi
+    done
+
+    if [ ${#SELECTED_MAS_APPLICATIONS[@]} -gt 0 ]; then
+      echo "${ARROW} Installing applications via App Store..."
+      for application in "${SELECTED_MAS_APPLICATIONS[@]}"; do
+        mas install ${application}
+      done
+    fi
+  fi
 fi
 
 #----------------------------
