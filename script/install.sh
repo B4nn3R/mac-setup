@@ -26,9 +26,8 @@ ARROW_GREEN="$GREEN$BOLD==>$DEFAULT"
 ARROW_YELLOW="$YELLOW$BOLD==>$DEFAULT"
 # Array of available applications that can be installed via Homebrew Cask
 AVAILABLE_CASK_APPLICATIONS=(
-  appcleaner
-  agenda
   alfred
+  appcleaner
   android-file-transfer
   android-studio
   adafruit-arduino
@@ -54,7 +53,6 @@ AVAILABLE_CASK_APPLICATIONS=(
   microsoft-office
   onedrive
   openoffice
-  opera
   postman
   sequel-pro
   skyfonts
@@ -73,10 +71,29 @@ AVAILABLE_CASK_APPLICATIONS=(
 )
 # Array of available App Store applications
 AVAILABLE_MAS_APPLICATIONS=(
-  1147396723  #WhatsApp Desktop
+  405843582
+  409222199
+  1298486723
+  823766827
+  803453959
+  425424353
+  1147396723
+  497799835
 )
+AVAILABLE_MAS_APPLICATIONS_NAME=(
+  "Alfred"
+  "Cyberduck"
+  "FileZilla Pro - FTP and Cloud"
+  "OneDrive"
+  "Slack"
+  "The Unarchiver"
+  "WhatsApp Desktop"
+  "Xcode"
+)
+
 # Array of available npm packages
 AVAILABLE_NPM_PACKAGES=(
+  @adonisjs/cli
   gulp-cli
   jest
   live-server
@@ -250,10 +267,10 @@ if $IS_MAS_INSTALLED; then
   read -p "${ARROW_YELLOW} Install applications via App Store? [y/n]: "
 
   if [ "$REPLY" == "y" ]; then
-    for item in "${AVAILABLE_MAS_APPLICATIONS[@]}"; do
-      read -ep "${ARROW_YELLOW} Install \"$item\"? [y/n]: "
+    for key in "${!AVAILABLE_MAS_APPLICATIONS_NAME[@]}"; do
+      read -ep "${ARROW_YELLOW} Install \"${AVAILABLE_MAS_APPLICATIONS_NAME[$key]}\"? [y/n]: "
       if [ "$REPLY" == "y" ]; then
-        SELECTED_MAS_APPLICATIONS+=("$item")
+        SELECTED_MAS_APPLICATIONS+=("${AVAILABLE_MAS_APPLICATIONS[$key]}")
       fi
     done
 

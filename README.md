@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/appalaszynski/mac-setup">
+  <a href="https://github.com/B4nn3R/mac-setup">
     <img src="https://user-images.githubusercontent.com/35331661/42627932-c9f65182-85ce-11e8-84b3-0133c88f8a7e.png" height="125px">
   </a>
   <h1>Mac Setup</h1>
@@ -7,17 +7,17 @@
     <em>Front End Web Development Setup for macOS</em>
   </p>
   <p>
-    <a href="https://github.com/appalaszynski/mac-setup/stargazers">
-      <img src="https://img.shields.io/github/stars/appalaszynski/mac-setup.svg" alt="Stars" /> 
+    <a href="https://github.com/B4nn3R/mac-setup/stargazers">
+      <img src="https://img.shields.io/github/stars/B4nn3R/mac-setup.svg" alt="Stars" /> 
     </a>
-    <a href="https://github.com/appalaszynski/mac-setup/commits/master">
-      <img src="https://img.shields.io/github/last-commit/appalaszynski/mac-setup.svg" alt="Last Commit" />
+    <a href="https://github.com/B4nn3R/mac-setup/commits/master">
+      <img src="https://img.shields.io/github/last-commit/B4nn3R/mac-setup.svg" alt="Last Commit" />
     </a>
   </p>
   <br>
 </div>
 
-This document describes how I set up front end web development environment on my MacBook Air with **macOS Mojave 10.14**.
+This document describes how I set up Full Stack development environment on my MacBook Pro with **macOS Mojave 10.15**.
 
 ---
 
@@ -53,7 +53,7 @@ $ bash script/install.sh
 - one line installation - open your terminal and paste the following code:
  
 ```shell
-$ curl -L https://github.com/appalaszynski/mac-setup/archive/master.tar.gz | tar -xvz; cd mac-setup-master; chmod +x script/install.sh; script/install.sh
+$ curl -L https://github.com/B4nn3R/mac-setup/archive/master.tar.gz | tar -xvz; cd mac-setup-master; chmod +x script/install.sh; script/install.sh
 ```
 
 <div align="center">
@@ -128,7 +128,7 @@ Setting a firmware password prevents your Mac from starting up from any device o
 $ firmwarepasswd -setpasswd -setmode command
 ```
 
-You can find a lot more settings in [defaults.sh](https://github.com/appalaszynski/mac-setup/blob/master/api/defaults.sh).
+You can find a lot more settings in [defaults.sh](https://github.com/B4nn3R/mac-setup/blob/master/api/defaults.sh).
 
 ---
 
@@ -137,7 +137,7 @@ You can find a lot more settings in [defaults.sh](https://github.com/appalaszyns
 I use my custom Terminal profile which I called **Flat**. You can download it by typing:
 
 ```shell
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Flat.terminal
+$ curl -O https://raw.githubusercontent.com/B4nn3R/mac-setup/master/Flat.terminal
 ```
 
 To use it as default profile, open downloaded `Flat.terminal` file and click **Shell** > **Use settings as default** option.
@@ -199,7 +199,7 @@ To download my `.bash_profile` and execute its content use:
 
 ```shell
 $ cd ~
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/.bash_profile
+$ curl -O https://raw.githubusercontent.com/B4nn3R/mac-setup/master/.bash_profile
 $ source ~/.bash_profile
 ```
 
@@ -311,7 +311,7 @@ $ mas search <app name>
 My `Brewfile` file can be downloaded using:
 
 ```shell
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Brewfile
+$ curl -O https://raw.githubusercontent.com/B4nn3R/mac-setup/master/Brewfile
 ```
 
 To install listed applications type:
@@ -337,7 +337,7 @@ The other and faster way is creating the Git configuration file (`~/.gitconfig`)
 
 ```shell
 $ cd ~
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/.gitconfig
+$ curl -O https://raw.githubusercontent.com/B4nn3R/mac-setup/master/.gitconfig
 $ open .gitconfig
 ```
 
@@ -515,7 +515,7 @@ You can copy and paste them or just download whole file by typing:
 
 ```shell
 $ cd /Users/<your username>/Library/Application Support/Code/User
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/settings.json
+$ curl -O https://raw.githubusercontent.com/B4nn3R/mac-setup/master/settings.json
 ```
 
 ### Extensions
@@ -543,4 +543,4 @@ $ code --install-extension CoenraadS.bracket-pair-colorizer --install-extension 
 
 I use my own global snippets instead of installing snippets extensions. User custom global snippets are located in `/Users/<your username>/Library/Application Support/Code/User/snippets` as files with `code-snippets` extension. You can easily create or edit them by going to **Code** > **Preferences** > **User Snippets**.
 
-You can find all my snippets in [snippets.code-snippets](https://github.com/appalaszynski/mac-setup/blob/master/snippets.code-snippets).
+You can find all my snippets in [snippets.code-snippets](https://github.com/B4nn3R/mac-setup/blob/master/snippets.code-snippets).

@@ -8,7 +8,7 @@ alias ..="cd .."
 alias ....="cd ../.."
 
 # Shortcuts
-alias p="cd ~/Projects"
+alias p="cd ~/Documents/workspaces"
 alias d="cd ~/Desktop"
 
 # Configure ls command
