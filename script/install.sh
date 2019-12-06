@@ -45,10 +45,10 @@ clear
 
 # Print logo and description
 echo -e "${CYAN}${BOLD}${LOGO}${DEFAULT}${NEW_LINE}"
-echo -e "${CYAN}${BOLD}   Front End Web Development Setup for macOS$NEW_LINE"
+echo -e "${CYAN}${BOLD}   Full Stack Development Setup for macOS$NEW_LINE"
 echo -e "$DIVIDER"
-echo "      <https://github.com/appalaszynski>"
-echo "  <https://github.com/appalaszynski/mac-setup>"
+echo "      <https://github.com/B4nn3R>"
+echo "  <https://github.com/B4nn3R/mac-setup>"
 echo -e "${DIVIDER}${NEW_LINE}"
 
 echo "Welcome to the installer!"
