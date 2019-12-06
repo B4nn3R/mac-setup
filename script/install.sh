@@ -44,6 +44,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   fork
   google-chrome
   gpg-suite
+  inkscape
   iterm2
   keepingyouawake
   keka
