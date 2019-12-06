@@ -1,7 +1,7 @@
 {
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Monokai",
-  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  "workbench.activityBar.visible": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.statusBar.feedback.visible": false,
   "workbench.list.openMode": "doubleClick",
@@ -10,7 +10,7 @@
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.wordWrap": "on",
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   "editor.formatOnPaste": true,
   "editor.detectIndentation": false,
   "editor.dragAndDrop": false,
@@ -54,4 +54,6 @@
     "CSS",
     "SASS"
   ],
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
 }

@@ -82,14 +82,14 @@ AVAILABLE_MAS_APPLICATIONS=(
   497799835
 )
 AVAILABLE_MAS_APPLICATIONS_NAME=(
-  "Alfred"
-  "Cyberduck"
-  "FileZilla Pro - FTP and Cloud"
-  "OneDrive"
-  "Slack"
-  "The Unarchiver"
-  "WhatsApp Desktop"
-  "Xcode"
+  Alfred
+  Cyberduck
+  FileZilla Pro - FTP and Cloud
+  OneDrive
+  Slack
+  The Unarchiver
+  WhatsApp Desktop
+  Xcode
 )
 
 # Array of available npm packages
@@ -414,7 +414,7 @@ if $IS_VSCODE_INSTALLED; then
 
     if [ ${#SELECTED_VSCODE_EXTENSIONS[@]} -gt 0 ]; then
       echo "${ARROW} Installing Visual Studio Code extensions..."
-      for application in "${SELECTED_NPM_PACKAGES[@]}"; do
+      for application in "${SELECTED_VSCODE_EXTENSIONS[@]}"; do
         code --install-extension ${application}
       done
     fi
