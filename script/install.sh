@@ -65,6 +65,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   the-unarchiver
   transmission
   tunnelblick
+  valentina-studio
   visual-studio
   visual-studio-code
   vlc
