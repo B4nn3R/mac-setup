@@ -41,6 +41,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   filezilla
   firefox
   flux
+  font-source-code-pro
   fork
   google-chrome
   gpg-suite

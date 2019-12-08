@@ -41,6 +41,10 @@ PS1+="${GRAY}\$ " # Dollar sign
 PS1+="${DEFAULT}" # Get back default color
 
 export PS1;
+
+# nice coloring of listings
+export CLICOLOR=1;
+
 # Add Visual Studio Code (code)
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
