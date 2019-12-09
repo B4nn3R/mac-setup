@@ -41,6 +41,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   filezilla
   firefox
   flux
+  font-source-code-pro
   fork
   google-chrome
   gpg-suite
@@ -65,6 +66,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   the-unarchiver
   transmission
   tunnelblick
+  valentina-studio
   visual-studio
   visual-studio-code
   vlc
