@@ -77,6 +77,7 @@ AVAILABLE_MAS_APPLICATIONS=(
   1298486723
   823766827
   803453959
+  1102494854
   425424353
   1147396723
   497799835
@@ -87,6 +88,7 @@ AVAILABLE_MAS_APPLICATIONS_NAME=(
   FileZilla Pro - FTP and Cloud
   OneDrive
   Slack
+  System Designer
   The Unarchiver
   WhatsApp Desktop
   Xcode
@@ -99,6 +101,7 @@ AVAILABLE_NPM_PACKAGES=(
   jest
   live-server
   create-react-app
+  typescript
 )
 # Array of available VS Code extensions
 AVAILABLE_VSCODE_EXTENSIONS=(
