@@ -57,4 +57,5 @@
   "editor.renderWhitespace": "none",
   "editor.renderControlCharacters": false,
   "editor.formatOnSave": true,
+  "eslint.run": "onSave",
 }
