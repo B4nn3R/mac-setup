@@ -99,6 +99,7 @@ AVAILABLE_MAS_APPLICATIONS_NAME=(
 # Array of available npm packages
 AVAILABLE_NPM_PACKAGES=(
   @adonisjs/cli
+  eslint
   gulp-cli
   jest
   live-server
