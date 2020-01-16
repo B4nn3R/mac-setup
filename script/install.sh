@@ -62,6 +62,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   slack
   spectacle
   spotify
+  stretchly
   teamviewer
   the-unarchiver
   transmission
