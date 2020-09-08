@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Logo
-LOGO=" __  __               _____      _
+LOGO="
+ __  __               _____      _
 |  \/  |             / ____|    | |
 | \  / | __ _  ___  | (___   ___| |_ _   _ _ __
 | |\/| |/ _\` |/ __|  \___ \ / _ \ __| | | | '_ \\
@@ -86,15 +87,15 @@ AVAILABLE_MAS_APPLICATIONS=(
   497799835
 )
 AVAILABLE_MAS_APPLICATIONS_NAME=(
-  Alfred
-  Cyberduck
-  FileZilla Pro - FTP and Cloud
-  OneDrive
-  Slack
-  System Designer
-  The Unarchiver
-  WhatsApp Desktop
-  Xcode
+  "Alfred"
+  "Cyberduck"
+  "FileZilla Pro - FTP and Cloud"
+  "OneDrive"
+  "Slack"
+  "System Designer"
+  "The Unarchiver"
+  "WhatsApp Desktop"
+  "Xcode"
 )
 
 # Array of available npm packages
@@ -190,7 +191,7 @@ else
 
   if [ "$REPLY" == "y" ]; then
     echo "${ARROW} Installing Homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     IS_HOMEBREW_INSTALLED=true
   fi
@@ -258,14 +259,16 @@ if [ "$REPLY" == "y" ]; then
 fi
 
 #----------------------------
-# .bash_profile
+# .zsh
 #----------------------------
 
-read -p "${ARROW_YELLOW} Configure bash by creating ~/.bash_profile file? [y/n]: "
+read -p "${ARROW_YELLOW} Install Oh My Zsh? [y/n]:  "
 
 if [ "$REPLY" == "y" ]; then
-  echo "${ARROW} Creating ~/.bash_profile file..."
-  cp .bash_profile ~ 
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    echo "${ARROW} Creating ~/.zshrc file..."
+    cp .zshrc ~ 
 fi
 
 #----------------------------
@@ -343,8 +346,8 @@ else
 
   if [ "$REPLY" == "y" ]; then
     echo "${ARROW} Installing Node Version Manager..."
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-    source ~/.bash_profile
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    source ~/.zshrc
 
     IS_NVM_INSTALLED=true
   fi
