@@ -54,6 +54,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   libreoffice-language-pack
   mamp
   microsoft-office
+  microsoft-teams
   onedrive
   openoffice
   postman
