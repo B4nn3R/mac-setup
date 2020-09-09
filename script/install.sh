@@ -77,6 +77,7 @@ AVAILABLE_CASK_APPLICATIONS=(
 )
 # Array of available App Store applications
 AVAILABLE_MAS_APPLICATIONS=(
+  1287445660
   405843582
   409222199
   1298486723
@@ -88,6 +89,7 @@ AVAILABLE_MAS_APPLICATIONS=(
   497799835
 )
 AVAILABLE_MAS_APPLICATIONS_NAME=(
+  "Agenda"
   "Alfred"
   "Cyberduck"
   "FileZilla Pro - FTP and Cloud"
