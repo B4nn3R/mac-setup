@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Logo
 LOGO="
@@ -196,7 +196,7 @@ else
 
   if [ "$REPLY" == "y" ]; then
     echo "${ARROW} Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     IS_HOMEBREW_INSTALLED=true
   fi
@@ -351,7 +351,7 @@ else
 
   if [ "$REPLY" == "y" ]; then
     echo "${ARROW} Installing Node Version Manager..."
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
     source ~/.zshrc
 
     IS_NVM_INSTALLED=true
