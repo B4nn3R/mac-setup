@@ -33,9 +33,11 @@ AVAILABLE_CASK_APPLICATIONS=(
   android-studio
   adafruit-arduino
   avast-security
+  azure-data-studio
   background-music
   balenaetcher
   cyberduck
+  dbeaver-community
   docker
   docker-toolbox
   dropbox
