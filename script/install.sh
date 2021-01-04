@@ -50,6 +50,7 @@ AVAILABLE_CASK_APPLICATIONS=(
   gpg-suite
   inkscape
   iterm2
+  karabiner-elements
   keepingyouawake
   keka
   libreoffice
